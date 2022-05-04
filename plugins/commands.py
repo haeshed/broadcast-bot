@@ -52,8 +52,8 @@ async def subscribers_count(bot, m: Message):
 @Client.on_message(filters.private & filters.command('send'))
 async def send_text(bot, m: Message):
     id = m.from_user.id
-    if id not in Config.AUTH_USERS:
-        return
+#     if id not in Config.AUTH_USERS:
+#         return
     if (" " not in m.text) and ("send" in m.text) and (m.reply_to_message is not None):
         query = await query_msg()
         for row in query:
